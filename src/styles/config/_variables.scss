@@ -1,0 +1,46 @@
+// creating a design system that ensures that any change here should affect the whole system/project
+
+$white: #fff;
+$blue-primary: #032849;
+$opacity-primary: rgba(19, 129, 215, 0.12);
+
+$black-primary: #111111;
+$green-primary: #1ab41a;
+
+// box shadows
+$card-shadow: -10px 10px 24px rgba(255, 255, 255, 0.2);
+
+$banner-shadow: -10px 10px 20px rgba(255, 255, 255, 0.1);
+
+//media queries
+
+$xsmall-and-up: "screen and (min-width : 600px)";
+$tablet-and-up: "screen and (min-width : 768px)";
+$md-tablet-and-up: "screen and (min-width : 1200px)";
+$lg-tablet-and-up: "screen and (min-width : 1300px)";
+
+// fonts
+$main-font: "Work Sans", sans-serif;
+
+// Font Family
+$font--recoleta: "Recoleta", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font--walsheim: "Walsheim", sans-serif;
+
+// letter spacing
+$letter-spacing: -1.5px;
+
+/* gradients */
+$card-gradient: linear-gradient(
+  90deg,
+  #fee003 0%,
+  #ffc503 12.4%,
+  #e6b011 24.9%,
+  #ff9350 37.4%,
+  #ff8035 49.91%,
+  #fe6c2d 62.41%,
+  #f74f58 74.91%,
+  #d04f53 87.41%,
+  #a95253 100%
+);
+
+$bannerBg: rgba(255, 255, 255, 0.65);

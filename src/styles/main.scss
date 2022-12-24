@@ -1,0 +1,21 @@
+@use "./config/variables" as variable;
+@use "./config/reset" as reset;
+@use "./config/typography" as typography;
+@use "./config/globals" as globals;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: variable.$font--walsheim;
+  color: variable.$white;
+  background: variable.$black-primary;
+  color: variable.$green-primary;
+}

@@ -4,6 +4,7 @@ import { getContentfulPage } from '@/base/bridge/getContentfulPage.js';
 import { TPageTemplate } from './type.js';
 import PageLayout from '../../../layouts/page-layout';
 // import PageLayout from '@/layouts/page-layout/index.js';
+import './../../../styles/main.scss';
 
 const Page = ({ data }: TPageTemplate) => {
   return <PageLayout> {data.page.sections.map(getContentfulPage)} </PageLayout>;

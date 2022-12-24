@@ -1,8 +1,10 @@
 import HeroComponent from './../../components/elements/hero';
+import BlogPageComponent from './../../components/elements/blog';
 import React from 'react';
 
 const body = {
   ContentfulHero: HeroComponent,
+  ContentfulBlogPost: BlogPageComponent,
 };
 
 export const getContentfulPage = (section) => {

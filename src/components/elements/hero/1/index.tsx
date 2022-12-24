@@ -1,3 +1,4 @@
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { THero } from '../type';
 
@@ -6,6 +7,9 @@ const Hero1 = (props: THero) => {
   return (
     <div>
       <h1>{props.title}</h1>
+      <p>{props.title}</p>
+
+      <GatsbyImage />
     </div>
   );
 };

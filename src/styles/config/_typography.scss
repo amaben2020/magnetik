@@ -14,7 +14,7 @@ $h1: $h2 * $ratio; // 1.333 * 266.7% = 300% >>> 36px
 
 p {
   font-size: $font-size + 20; // 100% - 25% = 75% >>> 12px
-  font-family: Walsheim;
+  font-family: variable.$font--walsheim;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -47,7 +47,7 @@ h1 {
 @media (min-width: 40em) {
   h4 {
     font-size: $h4;
-    font-family: "Work Sans";
+    font-family: variable.$font--walsheim;
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -55,19 +55,23 @@ h1 {
     color: white;
   }
 
+  // subheadings
   h3 {
     font-size: $h3;
+    font-family: variable.$font--recoleta;
   }
 
+  //main heading
   h2 {
     font-size: $h2;
     font-style: normal;
     font-weight: 300;
     line-height: 72px;
+    font-family: variable.$font--owen;
   }
 
   h1 {
     font-size: $h1;
-    font-family: variable.$font--recoleta;
+    font-family: variable.$font--owen;
   }
 }

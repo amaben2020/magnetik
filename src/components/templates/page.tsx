@@ -1,9 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { getContentfulPage } from './../../base/bridge/getContentfulPage.js';
 
 const Page = ({ data }: any) => {
   console.log('CTX', data);
-  return <div> n </div>;
+  return <div> {data.page.sections.map(getContentfulPage)} </div>;
 };
 
 export default Page;
@@ -16,10 +17,9 @@ export const ContentfulPageQuery = graphql`
       id
       slug
       sections {
-        id
-        title
-        variant
-        __typename
+        ... on ContentfulHero {
+          ...FragmentHero
+        }
       }
     }
   }

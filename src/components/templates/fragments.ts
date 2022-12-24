@@ -6,5 +6,11 @@ export const query = graphql`
     title
     variant
     __typename
+    image{
+    #   file{
+    #    url
+    # }
+    gatsbyImageData(layout: FULL_WIDTH)
+  }
   }
 `

@@ -19,6 +19,7 @@
     "./src/**/*",
     "gatsby-node.js",
     "./gatsby-config.ts",
-    "./plugins/**/*"
+    "./plugins/**/*",
+    "declaration.d.ts"
   ]
 }

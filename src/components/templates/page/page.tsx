@@ -1,10 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { getContentfulPage } from './../../base/bridge/getContentfulPage.js';
+import { getContentfulPage } from '@/base/bridge/getContentfulPage.js';
+import { TPageTemplate } from './type.js';
+import PageLayout from '../../../layouts/page-layout';
+// import PageLayout from '@/layouts/page-layout/index.js';
 
-const Page = ({ data }: any) => {
-  console.log('CTX', data);
-  return <div> {data.page.sections.map(getContentfulPage)} </div>;
+const Page = ({ data }: TPageTemplate) => {
+  return <PageLayout> {data.page.sections.map(getContentfulPage)} </PageLayout>;
 };
 
 export default Page;

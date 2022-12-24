@@ -31,7 +31,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   // Create pages for each markdown file.
-  const blogPostTemplate = path.resolve(`src/components/templates/page.tsx`);
+  const blogPostTemplate = path.resolve(
+    `src/components/templates/page/page.tsx`
+  );
   result.data.allContentfulPage.edges.forEach(({ node }) => {
     console.log('NODE', node);
     const slug = node.slug;

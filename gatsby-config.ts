@@ -1,7 +1,9 @@
 import type { GatsbyConfig } from "gatsby"
-const path = require('path')
+const paths = require('path')
 
-
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -12,7 +14,6 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
-
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
@@ -21,11 +22,20 @@ const config: GatsbyConfig = {
         // "templates": path.join(__dirname, "src/templates"),
         // "scss": path.join(__dirname, "src/scss"),
         // "types": path.join(__dirname, "src/types"),
-        "@": path.join(__dirname, "src"),
+        "@": paths.join(__dirname, "src"),
         // "pages": path.join(__dirname, 'src/pages')
       }
-    }
-
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `yrikkdau3nhc`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        host: `preview.contentful.com`,
+      },
+    },
+    `gatsby-plugin-image`,
   ]
 }
 

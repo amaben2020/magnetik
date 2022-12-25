@@ -2,10 +2,12 @@ import React from 'react';
 import * as styles from './styles.module.scss';
 import { TBlogCard } from './types';
 
-const BlogCard = ({ title }: TBlogCard) => {
+const BlogCard = ({ title, topic }: TBlogCard) => {
   return (
     <div className={styles.wrapper}>
-      <h2>{title}</h2>
+      <h3>{title}</h3>
+
+      <p>{topic}</p>
     </div>
   );
 };

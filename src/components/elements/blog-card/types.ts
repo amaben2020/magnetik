@@ -1,3 +1,4 @@
 export type TBlogCard = {
-  title: string
+  title: string,
+  topic: string,
 }

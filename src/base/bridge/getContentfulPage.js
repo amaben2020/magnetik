@@ -8,8 +8,7 @@ const body = {
 };
 
 export const getContentfulPage = (section) => {
-  console.log('SECTION', section);
-  const Section = body[section.__typename] || (
+  const Section = body[section.__typename] ?? (
     <p>Please insert proper component</p>
   );
 

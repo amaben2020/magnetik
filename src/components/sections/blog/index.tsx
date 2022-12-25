@@ -6,8 +6,9 @@ const BlogSection = ({ blogs }) => {
   console.log('Blogs', blogs);
   return (
     <section className={styles.wrapper}>
-      {blogs.map(({ title }) => (
-        <BlogCard title={title} />
+      <div>Sort & Filter</div>
+      {blogs.map(({ title, topic }) => (
+        <BlogCard title={title} topic={topic} />
       ))}
     </section>
   );

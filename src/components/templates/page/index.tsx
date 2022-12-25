@@ -8,11 +8,11 @@ import './../../../styles/main.scss';
 import BlogCard from './../../elements/blog-card/index';
 
 const PageTemplate = ({ data }: TPageTemplate) => {
-  console.log(data);
+  console.log('Page Template', data);
   // pass title to layout
   return (
     <PageLayout title={data.page.title}>
-      {data.page.sections.map(getContentfulPage)} <BlogCard />
+      {data.page.sections.map(getContentfulPage)}
     </PageLayout>
   );
 
@@ -42,8 +42,12 @@ export const ContentfulPageQuery = graphql`
           ...FragmentHero
         }
 
-        ... on ContentfulBlogPost {
-          ...FragmentBlogPost
+        # ... on ContentfulBlogPost {
+        #   ...FragmentBlogPost
+        # }
+
+        ... on ContentfulBlogs {
+          ...FragmentBlogs
         }
       }
     }

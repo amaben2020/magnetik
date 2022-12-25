@@ -26,6 +26,17 @@ export const query = graphql`
     }
     }
   }
+
+  fragment FragmentBlogs on ContentfulBlogs {
+      id,
+      __typename
+      blogs{
+        title
+        topic
+        slug
+      }
+    
+  }
 `
 // export const blogPostQuery = graphql`
 //  fragment FragmentBlog on ContentfulBlogPost {

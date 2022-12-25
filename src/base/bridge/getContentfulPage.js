@@ -4,10 +4,11 @@ import React from 'react';
 
 const body = {
   ContentfulHero: HeroComponent,
-  ContentfulBlogPost: BlogSection,
+  ContentfulBlogs: BlogSection,
 };
 
 export const getContentfulPage = (section) => {
+  console.log('SECTION', section);
   const Section = body[section.__typename] || (
     <p>Please insert proper component</p>
   );

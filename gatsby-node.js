@@ -76,10 +76,10 @@ exports.createPages = async ({
   reporter,
 }) => {
   const pages = await createContentfulPages(createPage, graphql, reporter);
-  const blogPosts = await createContentfulBlogPost(
-    createPage,
-    graphql,
-    reporter
-  );
-  return Promise.all([pages, blogPosts]);
+  // const blogPosts = await createContentfulBlogPost(
+  //   createPage,
+  //   graphql,
+  //   reporter
+  // );
+  return Promise.all([pages]);
 };

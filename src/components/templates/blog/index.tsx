@@ -1,14 +1,19 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
-const BlogTemplate = (props: any) => {
-  console.log(props.data.blogPost);
+const BlogTemplate = ({ data }: any) => {
+  console.log(data.blogPost);
+
+  const {
+    blogPost: { title, author },
+  } = data;
+
   return (
     <div>
-      <h1>{props.data.blogPost.title}</h1>
+      <h1>{title}</h1>
 
       <div>
-        <h3>{props.data.blogPost.author.name}</h3>
+        <h3>{author.name}</h3>
       </div>
     </div>
   );

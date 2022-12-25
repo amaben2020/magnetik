@@ -57,7 +57,8 @@ const createContentfulBlogPost = async (createPage, graphql, reporter) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`);
     return;
   }
-  blogPost.data.allContentfulPage.edges.forEach(({ node }) => {
+
+  blogPost.data.allContentfulBlogPost.edges.forEach(({ node }) => {
     const slug = node.slug;
     createPage({
       path: `/blog/${slug}`,
@@ -76,10 +77,10 @@ exports.createPages = async ({
   reporter,
 }) => {
   const pages = await createContentfulPages(createPage, graphql, reporter);
-  // const blogPosts = await createContentfulBlogPost(
-  //   createPage,
-  //   graphql,
-  //   reporter
-  // );
-  return Promise.all([pages]);
+  const blogPosts = await createContentfulBlogPost(
+    createPage,
+    graphql,
+    reporter
+  );
+  return Promise.all([pages, blogPosts]);
 };

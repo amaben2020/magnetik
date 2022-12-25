@@ -3,9 +3,7 @@ import { graphql } from 'gatsby';
 import { getContentfulPage } from './../../../base/bridge/getContentfulPage.js';
 import { TPageTemplate } from './type.js';
 import PageLayout from '../../../layouts/page-layout';
-// import PageLayout from '@/layouts/page-layout/index.js';
 import './../../../styles/main.scss';
-import BlogCard from './../../elements/blog-card/index';
 
 const PageTemplate = ({ data }: TPageTemplate) => {
   console.log('Page Template', data);
@@ -15,17 +13,6 @@ const PageTemplate = ({ data }: TPageTemplate) => {
       {data.page.sections.map(getContentfulPage)}
     </PageLayout>
   );
-
-  // return (
-  //   <div>
-  //     <h1>{data.page.title}</h1>
-  //     <h3>
-  //       {data?.page?.sections.map((section) => (
-  //         <div>{section.title}</div>
-  //       ))}
-  //     </h3>
-  //   </div>
-  // );
 };
 
 export default PageTemplate;

@@ -2,28 +2,36 @@ import { graphql } from 'gatsby';
 import React from 'react';
 
 const BlogTemplate = (props: any) => {
-  console.log('blog props', props);
-  return <div>BlogTemplate</div>;
+  console.log(props.data.blogPost);
+  return (
+    <div>
+      <h1>{props.data.blogPost.title}</h1>
+
+      <div>
+        <h3>{props.data.blogPost.author.name}</h3>
+      </div>
+    </div>
+  );
 };
 
 export default BlogTemplate;
 
-// export const ContentfulPageQuery = graphql`
-//   query ContentfulPageQuery($id: String!) {
-//     page: contentfulPage(id: { eq: $id }) {
-//       __typename
-//       title
-//       id
-//       slug
-//       sections {
-//         # ... on ContentfulHero {
-//         #   ...FragmentHero
-//         # }
-
-//         ... on ContentfulBlogPost {
-//           ...FragmentBlogPost
-//         }
-//       }
-//     }
-//   }
-// `;
+export const ContentfulBlogPostQuery = graphql`
+  query ContentfulBlogPostQuery($slug: String!) {
+    blogPost: contentfulBlogPost(slug: { eq: $slug }) {
+      __typename
+      title
+      id
+      slug
+      author {
+        id
+        name
+        bio
+        position
+      }
+      body {
+        raw
+      }
+    }
+  }
+`;

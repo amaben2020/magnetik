@@ -5,13 +5,14 @@ import { TPageTemplate } from './type.js';
 import PageLayout from '../../../layouts/page-layout';
 // import PageLayout from '@/layouts/page-layout/index.js';
 import './../../../styles/main.scss';
+import BlogCard from './../../elements/blog-card/index';
 
 const PageTemplate = ({ data }: TPageTemplate) => {
   console.log(data);
   // pass title to layout
   return (
     <PageLayout title={data.page.title}>
-      {data.page.sections.map(getContentfulPage)}{' '}
+      {data.page.sections.map(getContentfulPage)} <BlogCard />
     </PageLayout>
   );
 

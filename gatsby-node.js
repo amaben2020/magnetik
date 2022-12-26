@@ -1,6 +1,8 @@
 const path = require('path');
 const PageTemplate = path.resolve(`src/components/templates/page/index.tsx`);
 const BlogTemplate = path.resolve(`src/components/templates/blog/index.tsx`);
+const TagTemplate = path.resolve(`src/components/templates/tag/index.tsx`);
+const _ = require('lodash');
 
 const createContentfulPages = async (createPage, graphql, reporter) => {
   const pages = await graphql(
@@ -71,6 +73,40 @@ const createContentfulBlogPost = async (createPage, graphql, reporter) => {
   });
 };
 
+const createTagTemplate = async (createPage, graphql, reporter) => {
+  const blogPosts = await graphql(
+    `
+      {
+        allContentfulBlogPost {
+          __typename
+          edges {
+            node {
+              topic
+            }
+          }
+        }
+      }
+    `
+  );
+
+  if (blogPosts.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    return;
+  }
+
+  blogPosts.data.allContentfulBlogPost.edges.forEach(({ node }) => {
+    const slug = node.topic;
+    createPage({
+      path: `tag/${_.kebabCase(slug)}/`,
+      component: TagTemplate,
+      context: {
+        id: node.id,
+        tag: slug,
+      },
+    });
+  });
+};
+
 exports.createPages = async ({
   graphql,
   actions: { createPage },
@@ -82,5 +118,6 @@ exports.createPages = async ({
     graphql,
     reporter
   );
-  return Promise.all([pages, blogPosts]);
+  const tags = await createTagTemplate(createPage, graphql, reporter);
+  return Promise.all([pages, blogPosts, tags]);
 };

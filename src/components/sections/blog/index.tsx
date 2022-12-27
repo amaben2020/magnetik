@@ -11,11 +11,15 @@ const BlogSection = ({ blogs }) => {
     <section className={styles.wrapper}>
       <div>Sort , Pagination, Tags, Filter</div>
 
-      <TagList tags={tags} />
+      <div className={styles.tags}>
+        <TagList tags={tags} />
+      </div>
 
-      {blogs.map(({ title, topic }) => (
-        <BlogCard title={title} topic={topic} />
-      ))}
+      <div className={styles.blogs}>
+        {blogs.map(({ title, topic, slug }) => (
+          <BlogCard title={title} topic={topic} slug={slug} />
+        ))}
+      </div>
     </section>
   );
 };

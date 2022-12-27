@@ -1,18 +1,14 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 import { kebabCase } from 'lodash';
-const TagList = ({ tags }) => {
+import * as styles from './styles.module.scss';
+
+const Tag = ({ tag }: { tag: string }) => {
   return (
-    <>
-      {tags.map((tag) => (
-        <Link key={tag} to={`/tag/${kebabCase(tag)}`}>
-          <div key={tag} style={{ display: 'flex', margin: 10 }}>
-            <p>{tag}</p>
-          </div>
-        </Link>
-      ))}
-    </>
+    <Link className={styles.tag} to={`/tag/${kebabCase(tag)}`}>
+      {tag}
+    </Link>
   );
 };
 
-export default TagList;
+export default Tag;

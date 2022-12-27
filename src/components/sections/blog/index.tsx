@@ -1,4 +1,4 @@
-import TagList from '@/components/elements/tag';
+import TagList from '@/components/sections/tags';
 import React from 'react';
 import BlogCard from '../../elements/blog-card';
 import * as styles from './styles.module.scss';

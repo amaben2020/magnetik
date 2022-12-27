@@ -1,0 +1,30 @@
+@use "./../../../styles/config/variables" as variable;
+
+.tag {
+  display: flex;
+  align-items: center;
+  background-color: variable.$black-primary;
+  color: variable.$green-primary;
+  border: 1px solid variable.$green-primary;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  max-height: 50px;
+  text-decoration: none;
+  box-shadow: variable.$button-shadow;
+  transition: all 0.2s ease-in-out;
+  font-size: 16px;
+  font-family: variable.$font--walsheim;
+  text-transform: capitalize;
+
+  &:hover {
+    background-color: variable.$green-primary-dark;
+    color: variable.$white;
+    border: 1px solid variable.$green-primary;
+    box-shadow: variable.$button-shadow-secondary;
+  }
+
+  @media #{variable.$xsmall-and-up} {
+    font-size: 18px;
+  }
+}

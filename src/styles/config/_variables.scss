@@ -1,26 +1,24 @@
 // creating a design system that ensures that any change here should affect the whole system/project
 
 $white: #fff;
-$blue-primary: #032849;
 $opacity-primary: rgba(19, 129, 215, 0.12);
-
 $black-primary: #111111;
 $green-primary: #1ab41a;
+$green-primary-dark: #0c540c;
 
 // box shadows
-$card-shadow: -10px 10px 24px rgba(255, 255, 255, 0.2);
-
-$banner-shadow: -10px 10px 20px rgba(255, 255, 255, 0.1);
+$card-shadow: -5px 5px 7px rgba(255, 255, 255, 0.2);
+$button-shadow: 1px -1px 3px 0px rgba(26, 180, 26, 0.75);
+$button-shadow-secondary: 2px -1px 10px 0px rgba(26, 180, 26, 0.75);
 
 //media queries
-
 $xsmall-and-up: "screen and (min-width : 600px)";
 $tablet-and-up: "screen and (min-width : 768px)";
 $md-tablet-and-up: "screen and (min-width : 1200px)";
 $lg-tablet-and-up: "screen and (min-width : 1300px)";
 
 // fonts
-$main-font: "Work Sans", sans-serif;
+$main-font: "Walsheim", sans-serif;
 
 // Font Family
 $font--recoleta: "Recoleta", Arial, sans-serif;

@@ -52,3 +52,19 @@
 Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
 
 [<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+
+yOU COULD USE GATSBY-SSR.JS
+{
+/_ <script src="//code.tidio.co/3dvdazgp0snuzjeyzgfkyom90ji0wp18.js" async></script> _/
+}
+
+import React from 'react';
+
+export const onRenderBody = ({ setHeadComponents }) => {
+setHeadComponents([
+// <script
+// src='//code.tidio.co/3dvdazgp0snuzjeyzgfkyom90ji0wp18.js'
+// async
+// ></script>,
+]);
+};

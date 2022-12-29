@@ -26,6 +26,8 @@ const BlogSection = ({ blogs }) => {
           />
         ))}
       </div>
+
+      <div>Pagination</div>
     </section>
   );
 };

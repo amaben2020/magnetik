@@ -8,4 +8,11 @@
 
 .blogs {
   display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center;
+
+  @media screen and (min-width: 900px) {
+    justify-content: flex-start;
+  }
 }

@@ -16,8 +16,14 @@ const BlogSection = ({ blogs }) => {
       </div>
 
       <div className={styles.blogs}>
-        {blogs.map(({ title, topic, slug }) => (
-          <BlogCard title={title} topic={topic} slug={slug} />
+        {blogs.map(({ title, topic, slug, image, description }) => (
+          <BlogCard
+            title={title}
+            topic={topic}
+            slug={slug}
+            image={image}
+            description={description}
+          />
         ))}
       </div>
     </section>

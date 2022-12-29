@@ -1,12 +1,23 @@
 .wrapper {
   max-width: 390px;
-  padding: 20px;
+  padding: 10px;
   border-radius: 5px;
   text-decoration: none;
+
   &:hover {
     background: rgb(33, 33, 33);
-    box-shadow: 2px -1px 22px 0px rgba(26, 180, 26, 0.75);
+    box-shadow: 1px 1px 5px 1px rgba(26, 180, 26, 0.75);
     cursor: pointer;
     transition: all 0.5s ease-in-out;
   }
+
+  @media screen and (min-width: 900px) {
+    padding: 20px;
+  }
+}
+.img {
+  width: 350px;
+  height: 300px;
+  border-radius: 5px 5px 0 0;
+  margin: 20px 0;
 }

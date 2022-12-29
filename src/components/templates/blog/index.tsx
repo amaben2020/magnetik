@@ -37,6 +37,9 @@ export const ContentfulBlogPostQuery = graphql`
       body {
         raw
       }
+      image {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
     }
   }
 `;

@@ -1,3 +1,4 @@
+
 import { graphql } from "gatsby"
 
 export const query = graphql`
@@ -10,20 +11,38 @@ export const query = graphql`
     gatsbyImageData(layout: FULL_WIDTH)
   }
   }
+
+
+  fragment FluidImage on File {
+        childImageSharp {
+          fluid(maxWidth: 1600) {
+            ...GatsbyImageSharpFluid
+          }
+          original {
+            width
+          }
+        }
+    }
+
   fragment FragmentBlogPost on ContentfulBlogPost {
     id
     title
     __typename
+    
     body{
       raw
     }
     topic
     slug
+    description
     author{
       bio
 		image{
       	gatsbyImageData(layout: FULL_WIDTH)
     }
+    }
+    image{
+        gatsbyImageData(layout: FULL_WIDTH)
     }
   }
 
@@ -31,9 +50,13 @@ export const query = graphql`
       id,
       __typename
       blogs{
-        title
-        topic
-        slug
+        # title
+        # topic
+        # slug
+
+         ... on ContentfulBlogPost {
+          ...FragmentBlogPost
+        }
       }
     
   }

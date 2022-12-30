@@ -1,26 +1,12 @@
 import React from 'react';
-import { TOPIC } from './enum';
+import * as styles from './styles.module.scss';
 
-const Label = ({ text }: { text: string }) => {
-  const renderLabel = (label: string) => {
-    switch (label) {
-      case TOPIC.DEVELOPMENT:
-        return {
-          color: 'red',
-          backgroundColor: 'green',
-        };
-      case TOPIC.PRODUCT:
-        return {
-          color: 'yellow',
-          backgroundColor: 'red',
-        };
-
-      default:
-        break;
-    }
-  };
-
-  return <div style={{ ...renderLabel(text) }}>{text}</div>;
+const Label = ({ text, type }: { text: string; type: string }) => {
+  return (
+    <div className={styles.wrapper} data-variant={String(type)}>
+      {text}
+    </div>
+  );
 };
 
 export default Label;

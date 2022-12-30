@@ -12,9 +12,8 @@ const BlogCard = ({ title, topic, slug, image, description }: TBlogCard) => {
     <Link className={styles.wrapper} to={`/blog/${kebabCase(slug)}`}>
       <h3>{title}</h3>
       <GatsbyImage image={ima} alt='' className={styles.img} />
-      <p>{topic}</p>
 
-      <Label text={topic} />
+      <Label text={topic} type={topic} />
 
       <p>{description}</p>
     </Link>

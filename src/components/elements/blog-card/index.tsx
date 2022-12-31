@@ -5,13 +5,23 @@ import { kebabCase } from 'lodash';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import * as styles from './styles.module.scss';
 import Label from '../label';
+import useTheme from '@/hooks/useTheme';
 
 const BlogCard = ({ title, topic, slug, image, description }: TBlogCard) => {
-  const ima = getImage(image);
+  const imageConvertedToGatsby = getImage(image);
+  const value = useTheme();
   return (
-    <Link className={styles.wrapper} to={`/blog/${kebabCase(slug)}`}>
+    <Link
+      className={styles.wrapper}
+      data-variant={value.value ? 'dark' : ''}
+      to={`/blog/${kebabCase(slug)}`}
+    >
       <h3>{title}</h3>
-      <GatsbyImage image={ima} alt='' className={styles.img} />
+      <GatsbyImage
+        image={imageConvertedToGatsby}
+        alt={`Image of ${title.toLowerCase()}`}
+        className={styles.img}
+      />
 
       <Label text={topic} type={topic} />
 

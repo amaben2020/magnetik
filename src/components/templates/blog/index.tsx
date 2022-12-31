@@ -2,8 +2,6 @@ import { graphql } from 'gatsby';
 import React from 'react';
 
 const BlogTemplate = ({ data }: any) => {
-  console.log(data.blogPost);
-
   const {
     blogPost: { title, author },
   } = data;

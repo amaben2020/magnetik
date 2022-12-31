@@ -4,7 +4,6 @@ import { Theme } from "@/context"
 
 const useTheme = () => {
   const values = useContext(Theme)
-
   return values
 }
 

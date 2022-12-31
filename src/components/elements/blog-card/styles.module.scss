@@ -11,9 +11,15 @@
     transition: all 0.5s ease-in-out;
   }
 
-  // p {
-  //   color: white;
-  // }
+  p {
+    color: black;
+  }
+
+  &[data-variant="dark"] {
+    p {
+      color: white;
+    }
+  }
 
   @media screen and (min-width: 900px) {
     padding: 20px;

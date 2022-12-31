@@ -13,9 +13,30 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+// body {
+//   font-family: variable.$font--walsheim;
+//   color: variable.$white;
+//   background: variable.$black-primary;
+//   color: variable.$green-primary;
+// }
+
+body.light-mode {
+  // background-color: rgba(228, 221, 193, 0.65);
+  // color: rgb(24, 33, 58);
+  // transition: background-color 1s ease;
+
   font-family: variable.$font--walsheim;
   color: variable.$white;
   background: variable.$black-primary;
   color: variable.$green-primary;
+}
+
+body.dark-mode {
+  background-color: rgb(24, 33, 58);
+  color: rgba(197, 183, 183, 0.65);
+  font-family: variable.$font--walsheim;
+}
+
+header {
+  background-color: #035ec0;
 }

@@ -20,7 +20,6 @@ const PageLayout = ({ children, title }: TPageLayout) => {
                 src={`//code.tidio.co/${process.env.TIDIO_ID}.js`}
                 async
               />
-
               <div>
                 <h1>{title}</h1>
                 {children}

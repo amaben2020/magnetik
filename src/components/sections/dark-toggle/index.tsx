@@ -1,4 +1,5 @@
 import Toggle from '@/components/elements/toggle';
+import useTheme from '@/hooks/useTheme';
 import React from 'react';
 import useDarkMode from 'use-dark-mode';
 import * as styles from './styles.module.scss';
@@ -6,6 +7,9 @@ import * as styles from './styles.module.scss';
 const DarkModeToggle = () => {
   const darkMode = useDarkMode(false);
   console.log('Dark Mode', darkMode);
+
+  const disable = useTheme();
+  console.log('Disable', disable);
   return (
     <div className='toggle-icons'>
       <button

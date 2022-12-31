@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import useDarkMode from 'use-dark-mode';
 
-const Theme = React.createContext(undefined);
+export const Theme = React.createContext(undefined);
 
-const ThemeContext = ({ children }: { children: React.ReactNode }) => {
+const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const { value, enable, disable, toggle } = useDarkMode(false);
 
   const memoizedProps = useMemo(
@@ -19,4 +19,4 @@ const ThemeContext = ({ children }: { children: React.ReactNode }) => {
   return <Theme.Provider value={memoizedProps}>{children}</Theme.Provider>;
 };
 
-export default ThemeContext;
+export default ThemeProvider;

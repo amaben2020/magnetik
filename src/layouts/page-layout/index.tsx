@@ -14,11 +14,13 @@ const PageLayout = ({ children, title }: TPageLayout) => {
           return (
             <main className={styles.wrapper}>
               <header>
+                TODO: use render props pattern for header to render toggle and
+                mega navigation
                 <DarkModeToggle />
               </header>
               <Script
                 src={`//code.tidio.co/${process.env.TIDIO_ID}.js`}
-                async
+                async // not dependent on the execution of another script
               />
               <div>
                 <h1>{title}</h1>

@@ -1,9 +1,9 @@
 import React from 'react';
-import * as styles from './styles.module.scss';
+import './styles.module.scss';
 const Toggle = ({ checked, onChange }: any) => (
-  <span className={styles['toggle-control']}>
+  <span className='toggle-control'>
     <input
-      className={styles['dmcheck']}
+      className='dmcheck'
       type='checkbox'
       checked={checked}
       onChange={onChange}

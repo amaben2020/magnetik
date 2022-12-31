@@ -2,8 +2,8 @@ import React from 'react';
 import * as styles from './styles.module.scss';
 import { TPageLayout } from './types';
 import { Script } from 'gatsby';
-import Toggle from '@/components/elements/toggle';
-import DarkModeToggle from '@/hooks/useDarkMode';
+
+import DarkModeToggle from '@/components/sections/dark-toggle';
 
 const PageLayout = ({ children, title }: TPageLayout) => {
   return (

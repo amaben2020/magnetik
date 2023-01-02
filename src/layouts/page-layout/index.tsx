@@ -25,7 +25,7 @@ const PageLayout = ({ children, title }: TPageLayout) => {
   console.log(contentfulNavigation);
   return (
     <>
-      <Header />
+      <Header logo={contentfulNavigation.logo} />
       <Theme.Consumer>
         {(value) => {
           return (

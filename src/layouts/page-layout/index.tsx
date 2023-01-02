@@ -5,10 +5,12 @@ import { Script } from 'gatsby';
 
 import DarkModeToggle from '@/components/sections/dark-toggle';
 import { Theme } from '@/context';
+import Header from '@/components/sections/header';
 
 const PageLayout = ({ children, title }: TPageLayout) => {
   return (
     <>
+      <Header />
       <Theme.Consumer>
         {(value) => {
           return (

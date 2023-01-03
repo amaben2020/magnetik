@@ -1,3 +1,4 @@
+import LinkComponent from '@/components/elements/link';
 import { Link } from 'gatsby';
 import React from 'react';
 
@@ -8,7 +9,9 @@ const Header = ({ logo, toggleDarkMode, navItems }: any) => {
       <ul>
         {logo?.title}
         {navItems.map((link) => (
-          <Link to={link.url}>{link.title}</Link>
+          <li key={link.title}>
+            <LinkComponent url={link.url} title={link.title} />
+          </li>
         ))}
       </ul>
       TODO: Implement elastic search 🔍

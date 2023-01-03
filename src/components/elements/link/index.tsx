@@ -1,5 +1,6 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { Link } from 'gatsby';
+
 import LinkWrapper from './hoc';
 
 const LinkComponent = ({ url, title }: { url: string; title: string }) => {

@@ -1,11 +1,11 @@
 import LinkComponent from '@/components/elements/link';
-import { Link } from 'gatsby';
 import React from 'react';
+import * as styles from './styles.module.scss';
 
 const Header = ({ logo, toggleDarkMode, navItems }: any) => {
   console.log('navItems', navItems);
   return (
-    <header>
+    <header className={styles.header}>
       <ul>
         {logo?.title}
         {navItems.map((link) => (

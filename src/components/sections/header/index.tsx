@@ -14,7 +14,7 @@ const Header = ({ logo, toggleDarkMode, navItems }: any) => {
           </li>
         ))}
       </ul>
-      TODO: Implement elastic search 🔍
+      TODO: Implement elastic search with modal for blog posts 🔍
       {toggleDarkMode}
     </header>
   );

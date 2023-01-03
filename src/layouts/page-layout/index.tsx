@@ -25,16 +25,17 @@ const PageLayout = ({ children, title }: TPageLayout) => {
   console.log(contentfulNavigation);
   return (
     <>
-      <Header logo={contentfulNavigation.logo} />
       <Theme.Consumer>
         {(value) => {
           return (
             <main className={styles.wrapper}>
-              <header>
-                TODO: use render props pattern for header to render toggle and
-                mega navigation
-                <DarkModeToggle />
-              </header>
+              <Header
+                logo={contentfulNavigation.logo}
+                navItems={contentfulNavigation.navItem}
+                toggleDarkMode={<DarkModeToggle />}
+              />
+              TODO: use render props pattern for header to render toggle and
+              mega navigation
               <Script
                 src={`//code.tidio.co/${process.env.TIDIO_ID}.js`}
                 async // not dependent on the execution of another script

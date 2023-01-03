@@ -1,10 +1,18 @@
+import { Link } from 'gatsby';
 import React from 'react';
 
-const Header = ({ logo }: any) => {
-  console.log('logo', logo);
+const Header = ({ logo, toggleDarkMode, navItems }: any) => {
+  console.log('navItems', navItems);
   return (
     <header>
-      <p> {logo?.title} </p>
+      <ul>
+        {logo?.title}
+        {navItems.map((link) => (
+          <Link to={link.url}>{link.title}</Link>
+        ))}
+      </ul>
+      TODO: Implement elastic search 🔍
+      {toggleDarkMode}
     </header>
   );
 };

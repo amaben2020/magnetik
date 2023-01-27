@@ -1,5 +1,41 @@
 .header {
+  &h4 {
+    margin-left: 30px;
+  }
   & ul {
-    display: flex;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between !important;
+
+    li {
+      position: relative;
+      & a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      &:hover .dropdown {
+        cursor: pointer;
+        display: inline;
+        position: absolute;
+        top: 20px;
+        left: 0px;
+        line-height: 4;
+        min-width: 300px;
+        min-height: 500px;
+        padding: 10px;
+        z-index: 10;
+
+        a {
+          line-height: 4;
+          display: block;
+        }
+      }
+    }
+  }
+  .dropdown {
+    display: none;
+    line-height: 4;
+    border: 1px solid red;
   }
 }

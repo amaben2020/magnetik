@@ -9,7 +9,7 @@ const Hero1 = (props: THero) => {
       <h1>{props.title}</h1>
       <p>{props.title}</p>
 
-      <GatsbyImage />
+      {/* <GatsbyImage /> */}
     </div>
   );
 };

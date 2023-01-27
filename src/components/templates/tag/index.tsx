@@ -10,8 +10,7 @@ export default function Tags({ pageContext, data }) {
   } = data;
 
   const nodes = edges.map((e) => e.node);
-
-  console.log(nodes);
+ 
 
   return (
     <PageLayout>

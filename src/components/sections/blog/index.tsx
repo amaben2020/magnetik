@@ -1,7 +1,10 @@
-import TagList from '@/components/sections/tags';
-import React from 'react';
-import BlogCard from '../../elements/blog-card';
-import * as styles from './styles.module.scss';
+import React from "react";
+
+import TagList from "@/components/sections/tags";
+
+import BlogCard from "../../elements/blog-card";
+
+import * as styles from "./styles.module.scss";
 
 const BlogSection = ({ blogs }) => {
   console.log(blogs);

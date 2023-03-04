@@ -1,9 +1,9 @@
-import type { GatsbyConfig } from "gatsby"
-const paths = require('path')
+import type { GatsbyConfig } from "gatsby";
+const paths = require("path");
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -12,10 +12,10 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     {
-      resolve: 'gatsby-plugin-root-import',
+      resolve: "gatsby-plugin-root-import",
       options: {
         "@": paths.join(__dirname, "src"),
-      }
+      },
     },
     {
       resolve: `gatsby-source-contentful`,
@@ -53,9 +53,7 @@ const config: GatsbyConfig = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-use-dark-mode`,
-  ]
-}
+  ],
+};
 
-export default config
-
-
+export default config;

@@ -1,40 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 
+import LinkComponent from "@/components/elements/link";
+import useOutsideClick from "@/hooks/useOutsideClick";
 
 import * as styles from "./styles.module.scss";
 
-
-import LinkComponent from "@/components/elements/link";
-
 const Header = ({ logo, toggleDarkMode, navItems }: any) => {
-  const [isActive, setIsActive] = useState(null);
-
-  const handleClick = (index: number) => {
-    if (index > 0) {
-      setIsActive(index);
-    }
-  };
-
   const dropdownRef = useRef(null);
 
-  useEffect(() => {
-    const onClick = (e: any) => {
-      if (
-        dropdownRef.current !== null &&
-        !dropdownRef.current.contains(e.target)
-      ) {
-        setIsActive(null);
-      }
-    };
-
-    if (isActive) {
-      window.addEventListener("click", onClick);
-    }
-
-    return () => {
-      window.removeEventListener("click", onClick);
-    };
-  }, [isActive]);
+  const { isActive, setIsActive, handleClick } = useOutsideClick(dropdownRef);
 
   return (
     <header className={styles.header}>
@@ -44,8 +18,15 @@ const Header = ({ logo, toggleDarkMode, navItems }: any) => {
           {navItems.map((link: any, index: any) => (
             <li key={link.title}>
               <button
+                onMouseEnter={() => {
+                  if (index === isActive && link.links) {
+                    setIsActive(null);
+                  } else {
+                    handleClick(index);
+                  }
+                }}
                 onClick={() => {
-                  if (index === isActive) {
+                  if (index === isActive && link.links) {
                     setIsActive(null);
                   } else {
                     handleClick(index);
@@ -59,19 +40,16 @@ const Header = ({ logo, toggleDarkMode, navItems }: any) => {
                   className={isActive ? styles.menuActive : styles.menuInActive}
                 >
                   {Array.isArray(link.links?.linkCategory) &&
-                    link.links?.linkCategory.map(
-                      (linkCategory: any, index: any) => {
-                        return (
-                          <nav>
-                            <LinkComponent
-                              key={linkCategory.url}
-                              url={linkCategory.url}
-                              title={linkCategory?.title}
-                            />
-                          </nav>
-                        );
-                      },
-                    )}
+                    link.links?.linkCategory.map((linkCategory: any) => {
+                      return (
+                        <nav key={linkCategory.url}>
+                          <LinkComponent
+                            url={linkCategory.url}
+                            title={linkCategory?.title}
+                          />
+                        </nav>
+                      );
+                    })}
                 </div>
               )}
             </li>
@@ -86,3 +64,6 @@ const Header = ({ logo, toggleDarkMode, navItems }: any) => {
 };
 
 export default Header;
+
+// Task: create an edit event function that accepts (id, array and object) input
+// ensure the data is read only

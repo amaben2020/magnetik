@@ -1,11 +1,13 @@
-import React from 'react';
-import * as styles from './styles.module.scss';
-import { TPageLayout } from './types';
-import { graphql, useStaticQuery, Script } from 'gatsby';
+import React from "react";
+import { graphql, Script, useStaticQuery } from "gatsby";
 
-import DarkModeToggle from '@/components/sections/dark-toggle';
-import { Theme } from '@/context';
-import Header from '@/components/sections/header';
+import DarkModeToggle from "@/components/sections/dark-toggle";
+import Header from "@/components/sections/header";
+import { Theme } from "@/context";
+
+import { TPageLayout } from "./types";
+
+import * as styles from "./styles.module.scss";
 
 const PageLayout = ({ children, title }: TPageLayout) => {
   const { contentfulNavigation } = useStaticQuery(graphql`
